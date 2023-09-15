@@ -1,35 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import { NewToDoForm } from "./NewForm.jsx";
+import { ToDoList } from "./ToDoList.jsx";
 
-function App() {
-  const [count, setCount] = useState(0)
+
+
+// import ".style.css"
+
+export default function App() {
+
+  const [todos, setTodos] = useState(() => {
+    const localValue = localStorage.getItem('Item')
+    if(localValue == null) return []
+
+    return JSON.parse(localValue)
+  })
+
+useEffect(() => {
+  localStorage.setItem('Item', JSON.stringify(todos))
+},[todos])
+
+
+  function addToDo(title){
+    setTodos((currentTodos) => {
+      return [
+        ...currentTodos,
+        { id: crypto.randomUUID(), title, completed: false },
+      ];
+    });
+  }
+
+
+  function toggleToDo(id, completed){
+    setTodos(currentTodos => {
+      return currentTodos.map(todo => {
+        if(todo.id === id){
+          return {...todo, completed}
+        }
+      })
+    })
+  }
+
+  function deleteToDo(id){
+    setTodos(currentTodos => {
+      return currentTodos.filter(todo => todo.id !== id )
+    })
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      
+    <NewToDoForm onSubmit={addToDo}/>
+    <ToDoList todos={todos} toggleTodo={toggleToDo} deleteToDo={deleteToDo}/>
+      <h1 className="header">To Do List</h1>
+      
     </>
-  )
+  );
 }
-
-export default App
