@@ -1,0 +1,19 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: rgb(235, 227, 215);
+    color:rgb(199, 47, 40); 
+    margin: 0 auto;
+}
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header{
+    color:rgb(199, 47, 40); 
+}
+
+.btn{
+    border: rgb(199, 47, 40);;
+}

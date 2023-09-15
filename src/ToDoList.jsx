@@ -1,4 +1,6 @@
-export function toDoList({todos, toggleToDo, deleteToDo}){
+import {ToDoItem} from './ToDoItem';
+
+export function ToDoList({todos, toggleToDo, deleteToDo}){
 
 
     return(
@@ -7,9 +9,7 @@ export function toDoList({todos, toggleToDo, deleteToDo}){
         {todos.map((todo) => {
           return (
             <ToDoItem 
-            id={todo.id} 
-            completed={todo.completed} 
-            title={todo.title} 
+            {...todo}
             key={todo.id}
             toggleToDo={toggleToDo}
             deleteToDo={deleteToDo} />

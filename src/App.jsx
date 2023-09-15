@@ -1,13 +1,11 @@
-import { useState } from "react";
-import { NewToDoForm } from "./NewForm.jsx";
-import { ToDoList } from "./ToDoList.jsx";
+import {useEffect, useState} from "react"
+import { NewForm } from "./NewForm";
+import "./styles.css"
+import { ToDoList } from "./ToDoList";
 
 
-
-// import ".style.css"
 
 export default function App() {
-
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem('Item')
     if(localValue == null) return []
@@ -50,9 +48,11 @@ useEffect(() => {
 
   return (
     <>
-      <h1 className="header">To Do List</h1>
-      <NewToDoForm onSubmit={addToDo} />
-      <ToDoList todos={todos} toggleTodo={toggleToDo} deleteToDo={deleteToDo} />
+    <NewForm onSubmit={addToDo}/>
+    <h1 className="header">To Do List</h1>
+    <ToDoList todos={todos} toggleTodo={toggleToDo} deleteToDo={deleteToDo}/>
+     
+      
     </>
   );
-  
+}
