@@ -30,15 +30,17 @@ useEffect(() => {
   }
 
 
-  function toggleToDo(id, completed){
-    setTodos(currentTodos => {
-      return currentTodos.map(todo => {
-        if(todo.id === id){
-          return {...todo, completed}
+  function toggleToDo(id, completed) {
+    setTodos((currentTodos) => {
+      return currentTodos.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, completed };
         }
-      })
-    })
+        return todo; 
+      });
+    });
   }
+  
 
   function deleteToDo(id){
     setTodos(currentTodos => {
@@ -48,11 +50,9 @@ useEffect(() => {
 
   return (
     <>
-      
-    <NewToDoForm onSubmit={addToDo}/>
-    <ToDoList todos={todos} toggleTodo={toggleToDo} deleteToDo={deleteToDo}/>
       <h1 className="header">To Do List</h1>
-      
+      <NewToDoForm onSubmit={addToDo} />
+      <ToDoList todos={todos} toggleTodo={toggleToDo} deleteToDo={deleteToDo} />
     </>
   );
-}
+  

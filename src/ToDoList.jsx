@@ -1,4 +1,4 @@
-export function toDoList(todos, toggleToDo, deleteToDo){
+export function toDoList({todos, toggleToDo, deleteToDo}){
 
 
     return(
