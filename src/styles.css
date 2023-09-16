@@ -1,19 +1,50 @@
-*{
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
+* {
+  font-family: "Stylish", sans-serif;
+  box-sizing: border-box;
 }
-body{
-    background: rgb(235, 227, 215);
-    color:rgb(199, 47, 40); 
-    margin: 0 auto;
+body {
+  background: rgb(235, 227, 215);
+  color: rgb(199, 47, 40);
+  margin: 0 auto;
+  align-content: center;
+  width: fit-content;
 }
-html{
-    font-family: Arial, Helvetica, sans-serif;
+.new-item-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
-.header{
-    color:rgb(199, 47, 40); 
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.btn {
+  background: rgb(199, 47, 40);
+  border: 1px solid rgb(199, 47, 40);
+  color: rgb(34, 34, 34);
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+  outline: none;
 }
 
-.btn{
-    border: rgb(199, 47, 40);;
+.header {
+  color: rgb(199, 47, 40);
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+text {
+  margin-left: auto;
+}
+
+.btn {
+  border: rgb(199, 47, 40);
+}
+li {
+  list-style: none;
+}
+
+.btn-danger {
+  margin-left: 10px;
 }
