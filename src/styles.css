@@ -9,6 +9,10 @@ body {
   align-content: center;
   width: fit-content;
 }
+.listOfTodos{
+  width: 500px;
+  height: 500px
+}
 .new-item-form {
   display: flex;
   flex-direction: column;
@@ -33,6 +37,7 @@ body {
   font-size: 1.5rem;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
+  margin-left: 415px;
 }
 text {
   margin-left: auto;
@@ -47,4 +52,12 @@ li {
 
 .btn-danger {
   margin-left: 10px;
+}
+.addTask{
+  margin: auto;
+}
+.toDoListTitle{
+  width: 500px;
+  height: 100px;
+  align-items: center;
 }

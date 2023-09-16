@@ -14,9 +14,9 @@ export function NewForm({ onSubmit }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="new-item-form">
+    <form onSubmit={handleSubmit} className="new-item-form" autocomplete="off">
       <div className="form-row">
-        <label htmlFor="item">New Item</label>
+        <h2 htmlFor="item" className='addTask'>New Item</h2>
         <input
           value={newItem}
           onChange={(e) => setNewItem(e.target.value)}
@@ -24,7 +24,7 @@ export function NewForm({ onSubmit }) {
           id="item"
         />
       </div>
-      <button className="btn">Add</button>
+      <button className="btn"><strong>Add</strong></button>
     </form>
   );
 }

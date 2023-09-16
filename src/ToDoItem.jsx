@@ -1,5 +1,6 @@
 export function ToDoItem({ completed, id, title, toggleToDo, deleteToDo }) {
   return (
+    
     <li>
       <label>
         <input
@@ -14,5 +15,6 @@ export function ToDoItem({ completed, id, title, toggleToDo, deleteToDo }) {
         Delete
       </button>
     </li>
+    
   );
 }
