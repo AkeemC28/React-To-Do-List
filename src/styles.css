@@ -11,7 +11,8 @@ body {
 }
 .listOfTodos{
   width: 500px;
-  height: 500px
+  height: 500px;
+  border: 2px solid rgb(199, 47, 40);
 }
 .new-item-form {
   display: flex;
@@ -48,10 +49,12 @@ text {
 }
 li {
   list-style: none;
+  font-size: large;
 }
 
 .btn-danger {
   margin-left: 10px;
+  font-size: medium;
 }
 .addTask{
   margin: auto;
