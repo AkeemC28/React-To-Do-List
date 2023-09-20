@@ -10,9 +10,11 @@ body {
   width: fit-content;
 }
 .listOfTodos{
-  width: 500px;
+  width: 1000px;
   height: 500px;
-  border: 2px solid rgb(199, 47, 40);
+  border: 5px solid rgb(199, 47, 40);
+  background: rgb(226, 217, 205);
+  border-radius: 30px;
 }
 .new-item-form {
   display: flex;
@@ -23,6 +25,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
+  margin-top: 25px;
 }
 .btn {
   background: rgb(199, 47, 40);
@@ -38,7 +41,7 @@ body {
   font-size: 1.5rem;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
-  margin-left: 415px;
+  margin-left: 455px;
 }
 text {
   margin-left: auto;
